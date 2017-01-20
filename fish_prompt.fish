@@ -48,5 +48,5 @@ function fish_prompt
   else
     set indicate '$'
   end
-  echo -n -s " $indicate " $normal
+  echo -n -s $blue " $indicate " $normal
 end
