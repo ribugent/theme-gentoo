@@ -8,16 +8,6 @@ function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
-# change color depending on the user.
-function _user_host
-  if [ (id -u) = "0" ];
-    echo -n (set_color -o red)
-  else
-    echo -n (set_color -o blue)
-  end
-  echo -n (hostname|cut -d . -f 1)ˇ$USER (set color normal)
-end
-
 function fish_prompt
   set fish_greeting
   set -l cyan (set_color -o cyan)
@@ -53,6 +43,10 @@ function fish_prompt
   end
 
   # terminate with a nice prompt char:
-  echo -n -s ' » ' $normal
-
+  if [ (id -u) = "0" ];
+    set indicate '#'
+  else
+    set indicate '$'
+  end
+  echo -n -s $blue " $indicate " $normal
 end
