@@ -17,8 +17,8 @@ function fish_prompt
   set -l green (set_color -o green)
   set -l normal (set_color normal)
 
-  set -l cwd $blue(basename (prompt_pwd))
 
+  set -l cwd $blue(pwd)
   # output the prompt, left to right:
   # display 'user@host:'
   if [ (id -u) = "0" ];
@@ -48,5 +48,5 @@ function fish_prompt
   else
     set indicate '$'
   end
-  echo -n -s $blue " $indicate " $normal
+  echo -n -s " $indicate " $normal
 end
