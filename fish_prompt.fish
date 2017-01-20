@@ -18,7 +18,7 @@ function fish_prompt
   set -l normal (set_color normal)
 
 
-  set -l cwd $blue(pwd)
+  set -l cwd $blue(pwd | sed -e "s!^$HOME!~!g")
   # output the prompt, left to right:
   # display 'user@host:'
   if [ (id -u) = "0" ];
