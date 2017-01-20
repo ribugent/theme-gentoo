@@ -17,18 +17,19 @@ function fish_prompt
   set -l green (set_color -o green)
   set -l normal (set_color normal)
 
-
-  set -l cwd $blue(pwd | sed -e "s!^$HOME!~!g")
+  set -l cwd (pwd | sed -e "s!^$HOME!~!g")
   # output the prompt, left to right:
-  # display 'user@host:'
   if [ (id -u) = "0" ];
+    set cwd (basename $cwd)
+    # display host
     echo -n -s $red (hostname|cut -d . -f 1) " "
   else
+    # display 'user@host:'
     echo -n -s $green (whoami) $dark_green @ $green (hostname|cut -d . -f 1) " "
   end
 
   # display the current directory name:
-  echo -n -s $cwd $normal
+  echo -n -s $blue $cwd $normal
 
   # show git branch and dirty state, if applicable:
   if [ (_git_branch_name) ]

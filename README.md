@@ -11,7 +11,7 @@ Clean git theme with homey feel and git-centric features.
 * Left-hand side:
 	* user@host for regular user, green color
 	* host for root user, red color
-	* full cwd, home dir is replaced by ~
+	* full cwd for regular user, short cwd for root, home dir is replaced by ~
 	* EXTRA: git branch with state info (if applicable)
 
 * Right-hand side:
