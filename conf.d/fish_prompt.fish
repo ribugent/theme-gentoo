@@ -21,10 +21,10 @@ function fish_prompt
   if [ (id -u) = "0" ];
     set cwd (basename $cwd)
     # display host
-    echo -n -s $red (hostname|cut -d . -f 1) " "
+    echo -n -s $red (uname -n |cut -d . -f 1) " "
   else
     # display 'user@host:'
-    echo -n -s $green (whoami) @ $green (hostname|cut -d . -f 1) " "
+    echo -n -s $green (whoami) @ $green (uname -n|cut -d . -f 1) " "
   end
 
   # display the current directory name:
