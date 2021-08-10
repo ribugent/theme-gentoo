@@ -40,7 +40,7 @@ Unofficial Gentoo fish prompt theme which tries to follow Gentoo default bash $P
 # Credits:
 
 * Forked from https://github.com/oh-my-fish/theme-godfather and modified to follow Gentoo default bash $PS1
-* Colors and git functions taken from [amio](https://github.com/amio)'s [edan](https://github.com/oh-my-fish/oh-my-fish/blob/master/db/themes/edan) theme.
+* Colors and git functions taken from [amio](https://github.com/amio)'s [edan](https://github.com/oh-my-fish/theme-edan) theme.
 * "Gentoo" is a trademark of Gentoo Foundation, Inc.
 
 
